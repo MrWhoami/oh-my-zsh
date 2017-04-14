@@ -61,7 +61,7 @@ main() {
       exit 1
     fi
   fi
-  env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
+  env git clone --depth=1 https://github.com/MrWhoami/oh-my-zsh.git $ZSH || {
     printf "Error: git clone of oh-my-zsh repo failed\n"
     exit 1
   }
@@ -93,6 +93,12 @@ main() {
       printf "${BLUE}Please manually change your default shell to zsh!${NORMAL}\n"
     fi
   fi
+
+  # Create remote repo called upstream
+  origin_dir=$(pwd)
+  cd ~/.oh-my-zsh
+  git remote add upstream https://github.com/robbyrussell/oh-my-zsh.git
+  cd origin_dir
 
   printf "${GREEN}"
   echo '         __                                     __   '
