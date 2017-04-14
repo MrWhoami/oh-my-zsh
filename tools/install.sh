@@ -94,6 +94,12 @@ main() {
     fi
   fi
 
+  # Create remote repo called upstream
+  origin_dir=$(pwd)
+  cd ~/.oh-my-zsh
+  git remote add upstream https://github.com/robbyrussell/oh-my-zsh.git
+  cd origin_dir
+
   printf "${GREEN}"
   echo '         __                                     __   '
   echo '  ____  / /_     ____ ___  __  __   ____  _____/ /_  '
